@@ -7,7 +7,7 @@ const Controls: React.FC = () => {
   return (
     <div className="p-2 my-4 justify-center flex flex-row gap-4">
       <button
-        className="rounded bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-slate-700"
+        className="rounded dark:bg-orange-500 bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg dark:hover:bg-orange-600 hover:bg-slate-700"
         onClick={() => {
           resetGame();
           toggleDisableClick(false);
@@ -17,7 +17,7 @@ const Controls: React.FC = () => {
         Start new game
       </button>
       <button
-        className="rounded bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-slate-700"
+        className="rounded dark:bg-orange-500 bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg dark:hover:bg-orange-600 hover:bg-slate-700"
         onClick={() => {
           toggleAnimationEffect(true);
           toggleDisableClick(false);

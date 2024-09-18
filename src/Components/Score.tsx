@@ -5,7 +5,7 @@ const Score: React.FC = () => {
   const { allGames, player1Wins, player2Wins } = useGameStore();
   const { animationEffect } = useBoardStore();
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center pb-5">
       {/* Summary */}
       {player1Wins === player2Wins && player1Wins !== 0 && (
         <div className="text-center my-5">
@@ -23,20 +23,20 @@ const Score: React.FC = () => {
       {allGames.length > 0 && (
         <div className={`flex max-w-[95%] m-auto ${animationEffect && "animate-roto"}`}>
           <div>
-            <div className="text-center border border-black p-2 w-[100px] h-[40px]">
+            <div className="text-center border dark:border-white border-black p-2 w-[100px] h-[40px]">
               <span className="font-bold">Round</span>
             </div>
-            <div className="text-center border border-black p-2 w-[100px] h-[40px]">
+            <div className="text-center border dark:border-white border-black p-2 w-[100px] h-[40px]">
               <span className="font-bold">Winner</span>
             </div>
           </div>
           <div className="overflow-auto flex">
             {allGames.map((winner, index) => (
               <div key={index}>
-                <div className="text-center border border-black p-2 w-[100px] h-[40px]">
+                <div className="text-center border dark:border-white border-black p-2 w-[100px] h-[40px]">
                   <span>{index + 1}</span>
                 </div>
-                <div className="text-center border border-black p-2 w-[100px] h-[40px]">
+                <div className="text-center border dark:border-white border-black p-2 w-[100px] h-[40px]">
                   <span>{winner}</span>
                 </div>
               </div>

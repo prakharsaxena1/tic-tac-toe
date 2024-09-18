@@ -71,31 +71,31 @@ const GameBoard: React.FC = () => {
         }}
       >
         <div className="m-4 w-[300px] h-[300px] flex flex-wrap">
-          <div className="border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 0)}>
+          <div className="border-r border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 0)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[0][0]]}`}>{board[0][0]}</span>
           </div>
-          <div className="border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 1)}>
+          <div className="border-r border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 1)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[0][1]]}`}>{board[0][1]}</span>
           </div>
-          <div className="border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 2)}>
+          <div className="border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 2)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[0][2]]}`}>{board[0][2]}</span>
           </div>
-          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 0)}>
+          <div className="border-t border-r border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 0)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[1][0]]}`}>{board[1][0]}</span>
           </div>
-          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 1)}>
+          <div className="border-t border-r border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 1)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[1][1]]}`}>{board[1][1]}</span>
           </div>
-          <div className="border-t border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 2)}>
+          <div className="border-t border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 2)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[1][2]]}`}>{board[1][2]}</span>
           </div>
-          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 0)}>
+          <div className="border-t border-r border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 0)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[2][0]]}`}>{board[2][0]}</span>
           </div>
-          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 1)}>
+          <div className="border-t border-r border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 1)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[2][1]]}`}>{board[2][1]}</span>
           </div>
-          <div className="border-t border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 2)}>
+          <div className="border-t border-collapse dark:border-white border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 2)}>
             <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[2][2]]}`}>{board[2][2]}</span>
           </div>
         </div>
