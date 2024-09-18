@@ -1,8 +1,9 @@
 import React from "react";
-import { useGameStore } from "./store/store";
+import { useBoardStore, useGameStore } from "./store/store";
 
 const Score: React.FC = () => {
   const { allGames, player1Wins, player2Wins } = useGameStore();
+  const { animationEffect } = useBoardStore();
   return (
     <div className="flex flex-col justify-center items-center">
       {/* Summary */}
@@ -20,7 +21,7 @@ const Score: React.FC = () => {
         </div>
       )}
       {allGames.length > 0 && (
-        <div className="flex max-w-[95%] m-auto">
+        <div className={`flex max-w-[95%] m-auto ${animationEffect && "animate-roto"}`}>
           <div>
             <div className="text-center border border-black p-2 w-[100px] h-[40px]">
               <span className="font-bold">Round</span>

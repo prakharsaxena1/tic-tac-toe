@@ -14,8 +14,10 @@ export type BoardState = {
   board: ('X'|'O'|'')[][];
   turn: number;
   disableClick: boolean;
+  animationEffect: boolean;
   updateBoard: (row: number, col: number, val: 'X' | 'O') => void;
   updateTurn: (newTurn: number) => void;
   resetBoard: () => void,
   toggleDisableClick: (val: boolean) => void,
+  toggleAnimationEffect: (val: boolean) => void,
 };

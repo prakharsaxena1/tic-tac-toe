@@ -28,6 +28,7 @@ export const useBoardStore = create<BoardState>()((set) => ({
   ],
   turn: 0,
   disableClick: false,
+  animationEffect: false,
   updateBoard: (row, col, val) =>
     set((state) => {
       state.board[row][col] = val;
@@ -46,4 +47,5 @@ export const useBoardStore = create<BoardState>()((set) => ({
     }),
   updateTurn: (t) => set((state) => ({ ...state, turn: t })),
   toggleDisableClick: (val) => set(() => ({ disableClick: val })),
+  toggleAnimationEffect: (val) => set(() => ({ animationEffect: val })),
 }));

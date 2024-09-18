@@ -32,7 +32,7 @@ const colorMap = {
 }
 
 const GameBoard: React.FC = () => {
-  const { board, turn, updateBoard, updateTurn, disableClick, toggleDisableClick } = useBoardStore();
+  const { board, turn, updateBoard, updateTurn, disableClick, toggleDisableClick, animationEffect, toggleAnimationEffect, resetBoard } = useBoardStore();
   const { updateGames, updatePlayer1Wins, updatePlayer2Wins } = useGameStore();
   const handleClick = (row: number, col: number) => {
     if (disableClick) {
@@ -63,33 +63,41 @@ const GameBoard: React.FC = () => {
         <span className="text-2xl font-semibold">'s turn</span>
       </div>
       {/* Board */}
-      <div className="m-4 w-[300px] h-[300px] flex flex-wrap">
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 0)}>
-          <span className={`text-5xl ${colorMap[board[0][0]]}`}>{board[0][0]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 1)}>
-          <span className={`text-5xl ${colorMap[board[0][1]]}`}>{board[0][1]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 2)}>
-          <span className={`text-5xl ${colorMap[board[0][2]]}`}>{board[0][2]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 0)}>
-          <span className={`text-5xl ${colorMap[board[1][0]]}`}>{board[1][0]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 1)}>
-          <span className={`text-5xl ${colorMap[board[1][1]]}`}>{board[1][1]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 2)}>
-          <span className={`text-5xl ${colorMap[board[1][2]]}`}>{board[1][2]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 0)}>
-          <span className={`text-5xl ${colorMap[board[2][0]]}`}>{board[2][0]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 1)}>
-          <span className={`text-5xl ${colorMap[board[2][1]]}`}>{board[2][1]}</span>
-        </div>
-        <div className="border border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 2)}>
-          <span className={`text-5xl ${colorMap[board[2][2]]}`}>{board[2][2]}</span>
+      <div
+        className={`shadow-2xl m-5 rounded-md ${animationEffect && "animate-roto"}`}
+        onAnimationEnd={() => {
+          toggleAnimationEffect(false);
+          resetBoard();
+        }}
+      >
+        <div className="m-4 w-[300px] h-[300px] flex flex-wrap">
+          <div className="border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 0)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[0][0]]}`}>{board[0][0]}</span>
+          </div>
+          <div className="border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 1)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[0][1]]}`}>{board[0][1]}</span>
+          </div>
+          <div className="border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(0, 2)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[0][2]]}`}>{board[0][2]}</span>
+          </div>
+          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 0)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[1][0]]}`}>{board[1][0]}</span>
+          </div>
+          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 1)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[1][1]]}`}>{board[1][1]}</span>
+          </div>
+          <div className="border-t border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(1, 2)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[1][2]]}`}>{board[1][2]}</span>
+          </div>
+          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 0)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[2][0]]}`}>{board[2][0]}</span>
+          </div>
+          <div className="border-t border-r border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 1)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[2][1]]}`}>{board[2][1]}</span>
+          </div>
+          <div className="border-t border-collapse border-black w-[100px] h-[100px] justify-center items-center flex" onClick={() => handleClick(2, 2)}>
+            <span className={`text-5xl transition-opacity duration-500 ${animationEffect && "animate-ghost"} ${colorMap[board[2][2]]}`}>{board[2][2]}</span>
+          </div>
         </div>
       </div>
     </div>
