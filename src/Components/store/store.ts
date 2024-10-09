@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { BoardState, GameState } from "./store.interface";
 
-export const useGameStore = create<GameState>()((set) => ({
+export const useGameStore = create<GameState>((set) => ({
   allGames: [],
   player1Wins: 0,
   player2Wins: 0,
@@ -20,7 +20,7 @@ export const useGameStore = create<GameState>()((set) => ({
     })),
 }));
 
-export const useBoardStore = create<BoardState>()((set) => ({
+export const useBoardStore = create<BoardState>((set) => ({
   board: [
     ["", "", ""],
     ["", "", ""],
